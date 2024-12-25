@@ -46,6 +46,4 @@ new Contract
 
 ### 9 execute the function in other signer
 
-1 use VoidSigner  
-2 connect provider  
-3 connect signer
+use connect

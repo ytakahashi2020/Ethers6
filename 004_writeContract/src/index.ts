@@ -25,13 +25,19 @@ async function main() {
 
   console.log(receipt);
 
-  const other: VoidSigner = new VoidSigner(
-    "0x643aA0A61eADCC9Cc202D1915D942d35D005400C"
+  console.log("waiting for 5 seconds...");
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
+  const otherSigner = await provider.getSigner(
+    "0x2546BcD3c84621e976D8185a91A922aE77ECEc30"
   );
 
-  const otherSigner: VoidSigner = other.connect(provider);
-
-  await contract.connect(otherSigner).withdraw();
+  await contract
+    .connect(otherSigner)
+    .withdraw()
+    .catch((error) => {
+      console.log(error.shortMessage);
+    });
 }
 
 main().catch((error) => {
