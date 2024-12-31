@@ -44,12 +44,22 @@ JsonRpcProvider from ethers
 
 #### 1 create a abi
 
-`["event Withdrawal(uint amount, uint when)"]`
+`["function withdraw() public"]`
 
 #### 2 get a contract
 
 `new Contract(target, abi, runner?)
 
-### 7 Query the Event
+### 7 execute the function
+
+`await contract.withdraw()`
+
+### 8 Query the Event
+
+#### 1 create a abi
+
+`"event Withdrawal(uint amount, uint when)"`
+
+#### 2 query
 
 `contract.queryFilter(event, fromBlock?, toBlock?)`
