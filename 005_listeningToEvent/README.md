@@ -18,7 +18,7 @@
 
 #### 2 set timestamp
 
-ex) use https://url-c.com/tc/
+ex) use https://www.epochconverter.com/
 
 #### 3 deploy the contract
 
@@ -34,6 +34,12 @@ const url = "http://127.0.0.1:8545/";
 
 JsonRpcProvider from ethers
 
+#### 3 get a signer
+
+`await provider.getSigner()`
+
+JsonRpcProvider from ethers
+
 ### 6 create a contract
 
 #### 1 create a abi
@@ -42,14 +48,12 @@ JsonRpcProvider from ethers
 
 #### 2 get a contract
 
-new Contract
+`new Contract(target, abi, runner?)
 
 ### 7 Listening to the Event
 
-contract.on
+`contract.on(event, listener)`
 
 ### 8 set interval
 
 setInterval
-
-### 9 execute function from another terminal
