@@ -18,7 +18,7 @@
 
 #### 2 set timestamp
 
-ex) use https://url-c.com/tc/
+ex) use https://www.epochconverter.com/
 
 #### 3 deploy the contract
 
@@ -34,24 +34,22 @@ const url = "http://127.0.0.1:8545/";
 
 JsonRpcProvider from ethers
 
+#### 3 get a signer
+
+`await provider.getSigner()`
+
+JsonRpcProvider from ethers
+
 ### 6 create a contract
 
 #### 1 create a abi
 
-`["function withdraw() public","event Withdrawal(uint amount, uint when)"]`
+`["event Withdrawal(uint amount, uint when)"]`
 
 #### 2 get a contract
 
-new Contract
+`new Contract(target, abi, runner?)
 
-### 7 execute the function
+### 7 Query the Event
 
-### 8 get events
-
-#### 1 create a filter
-
-contract.filters.Withdrawal
-
-#### 2 get events
-
-await contract.queryFilter
+`contract.queryFilter(event, fromBlock?, toBlock?)`
