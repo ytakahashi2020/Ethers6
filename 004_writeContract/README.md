@@ -26,6 +26,10 @@ ex) use https://url-c.com/tc/
 
 ### 5 get a signer
 
+#### 0 create a main function
+
+`async function main() {}`
+
 #### 1 set url
 
 const url = "http://127.0.0.1:8545/";
@@ -40,10 +44,36 @@ JsonRpcProvider from ethers
 
 ### 7 get a contract
 
-new Contract
+`new Contract(target, abi, runner?)`
 
 ### 8 execute the function
 
+#### 1 execute
+
+`await contract.withdraw()`
+
+#### 2 get receipt
+
+`await result.awit()`
+
 ### 9 execute the function in other signer
 
-use connect
+#### 1 wait a little
+
+`await new Promise((resolve) => setTimeout(resolve), 5_000));`
+
+#### 2 get another signer
+
+`await provider.getSigner();`
+
+#### 2 create a new Contract
+
+`new Contract(target, abi, runner?)`
+
+#### 3 execute
+
+`await contract.withdraw()`
+
+#### 4 use connect
+
+`await contract.connect(otherSigner)`
